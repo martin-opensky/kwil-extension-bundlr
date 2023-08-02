@@ -1,5 +1,5 @@
 {
-  "name": "kwil-extension",
+  "name": "kwil-extension-bundlr",
   "version": "1.0.0",
   "main": "index.ts",
   "type": "module",
@@ -10,6 +10,7 @@
     "test": "node dist/index.js"
   },
   "dependencies": {
+    "kwil": "^3.2.3",
     "kwil-extensions": "^0.0.2",
     "nanoid": "^4.0.2"
   },
