@@ -1,5 +1,5 @@
 {
-  "name": "kwil-extension-bundlr",
+  "name": "kwil-extension-db-export",
   "version": "1.0.0",
   "main": "index.ts",
   "type": "module",
