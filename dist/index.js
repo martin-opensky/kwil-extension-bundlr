@@ -73,9 +73,9 @@ const saveExport = (bundlrNode, bundlrCurrency, exportData, dbid) => __awaiter(v
         { name: 'DB-Owner', value: exportData.schema.owner },
         { name: 'DB-Name', value: exportData.schema.name },
         { name: 'DBID', value: dbid },
+        { name: 'Date', value: new Date().toISOString() },
+        { name: 'Type', value: 'Export' },
         { name: 'Export-Id', value: exportId },
-        { name: 'Export-Date', value: new Date().toUTCString() },
-        { name: 'Export-Type', value: 'Export' },
         // { name: 'Exported-By', value: signerAddress },
         // { name: 'Signature', value: 'signatureRequired?' },
     ];
