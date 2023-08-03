@@ -14,7 +14,10 @@ RUN yarn install
 COPY . .
 
 # Build the application
-RUN yarn build
+# RUN yarn build
+# TEMP: Currently an error in the Bundlr package causes a build error however the JS files are still generated
+# So we run yarn build locally and then copy the dist folder as a temporary fix
+COPY dist /app/dist
 
 # Expose port
 EXPOSE 50052
