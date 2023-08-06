@@ -1,11 +1,7 @@
 database user_posts;
 
-use db_export{
-  node: 'http://node2.bundlr.network',
-  currency: 'matic'
-} as db_export;
-
-use unique_id as unique_id;
+use db_export as db_export;
+use helpers as helper;
 
 table users {
   id text maxlen(21) primary notnull,
@@ -23,7 +19,7 @@ table posts {
 }
 
 action create_account ($username) public {
-  $id = unique_id.generate();
+  $id = helper.id();
 
   INSERT INTO users
   VALUES ($id, $username, @caller);
@@ -38,7 +34,7 @@ action create_post ($content) public {
   FROM users 
   WHERE wallet = @caller;
 
-  $id = unique_id.generate();
+  $id = helper.id();
 
   INSERT INTO posts
   VALUES ($id, $content, (SELECT id FROM users WHERE wallet = @caller));
@@ -66,4 +62,3 @@ action start_export () private {
 
   SELECT $tx_id;
 }
-
