@@ -135,6 +135,6 @@ export default class Export {
     console.log(`Data Available at => https://arweave.net/${response.id}`);
     console.log(`DBID => ${this.dbid}`);
 
-    return response.id;
+    return `https://arweave.net/${response.id}`;
   }
 }
